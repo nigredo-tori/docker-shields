@@ -6,4 +6,6 @@ services:
 script:
   - docker build -t shields .
   - docker run --name shields -d shields
+  - sleep 5
   - docker exec -it shields bash -c "curl -f localhost:80"
+  - docker logs shields
