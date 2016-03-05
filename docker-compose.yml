@@ -1,0 +1,13 @@
+shields:
+  image: beevelop/shields
+  environment:
+    INFOSITE: http://shields.example.com
+  restart: always
+
+varnish:
+  image: beevelop/varnish
+  environment:
+    VIRTUAL_HOST: shields.example.com
+  links:
+    - "shields:backend"
+  restart: always
