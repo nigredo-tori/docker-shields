@@ -8,6 +8,15 @@
 
 # [Shields.io](https://github.com/badges/shields) for Docker :whale:
 
+## Run with Docker Compose
+The `docker-compose.yml` file allows you to run Shields with Varnish as cache server. This should increase Shields' performance and should generally reduce the server load.
+```bash
+# Clone this repo
+# Adapt docker-compose.yml for your needs (e.g. INFOSITE)
+docker-compose up -d
+```
+
+## Run manually
 ```bash
 docker run -d --name shields -p 80:80 \
     -e INFOSITE="http://shields.example.com" \
@@ -18,3 +27,5 @@ docker run -d --name shields -p 80:80 \
 - `GH_CLIENT_ID` (default: null)
 - `GH_CLIENT_SECRET` (default:null)
 - `INFOSITE` (default: `"http://shields.io"`)
+
+> Attention: You should definitely specify the `GH_CLIENT_*` variables to prevent reaching the request quota of 60 req / hour
