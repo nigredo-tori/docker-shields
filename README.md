@@ -14,6 +14,7 @@ The `docker-compose.yml` file allows you to run Shields with Varnish as cache se
 # Clone this repo
 # Adapt docker-compose.yml for your needs (e.g. INFOSITE)
 docker-compose up -d
+docker-compose logs -f
 ```
 
 ## Run manually
