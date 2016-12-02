@@ -1,4 +1,4 @@
-FROM beevelop/nodejs-python:0.12
+FROM beevelop/nodejs-python
 
 MAINTAINER Maik Hummel <m@ikhummel.com>
 
