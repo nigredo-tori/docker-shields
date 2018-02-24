@@ -24,6 +24,8 @@ docker run -d --name shields -p 80:80 \
     beevelop/shields
 ```
 
+Navigate to your Shields instance at http://shields.example.com/try.html (`try.html` is necessary, as the root redirects to shields.io).
+
 ## Configuration
 - `GH_CLIENT_ID` (default: null)
 - `GH_CLIENT_SECRET` (default:null)
