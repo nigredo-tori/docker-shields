@@ -4,12 +4,15 @@ MAINTAINER Maik Hummel <m@ikhummel.com>
 
 WORKDIR /opt
 
+ARG ref=master
+
 ENV GH_CLIENT_ID=null \
     GH_CLIENT_SECRET=null \
     INFOSITE="http://shields.io"
 
 RUN apt-get update && apt-get install -y pkg-config libcairo2-dev git gettext imagemagick && \
-    git clone https://github.com/badges/shields && cd shields && \
+    git clone https://github.com/badges/shields --branch=$ref && \
+    cd shields && \
     npm i
 
 COPY secret.tpl.json ./shields/
